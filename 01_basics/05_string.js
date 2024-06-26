@@ -1,7 +1,7 @@
 const name = "vishwa"
 const repoCount = 50
 console.log(name + repoCount + "values");
-console.log('hello my name ${name} and my repo account is ${repoCount}');
+console.log(`hello my name ${name} and my repo account is ${repoCount}`);
 const gameName = new String('vishwa_maa')
 console.log(gameName[0]);
 console.log(gameName.__proto__);
