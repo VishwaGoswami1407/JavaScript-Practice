@@ -40,6 +40,6 @@ const chai =() =>{
 //implicit operator             //imp not in curly brackets return keyword is important but round brackets keyword is not important
 // const addTwo = (num1, num2) =>  (num1 + num2)
 
-const addTwo = (num1, num2) =>  ({usename: "vishwa"})
+const addTwo = (num1, num2) =>  {usename: "vishwa"}
 console.log(addTwo(2, 4));
 
