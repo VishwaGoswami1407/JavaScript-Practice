@@ -3,7 +3,6 @@
 // ["","","",""]
 // [{},{},{}]
 
-
 const arr = [1, 2, 3, 4, 5, 6, 7]
 for (const num of arr) {
     // console.log(num);
@@ -28,10 +27,9 @@ for (const [key, value] of map) {
 }
 
 const myObject = {
-    game1: 'NFS',
+    'game': 'NFS',
     'game2': 'maskgun'
 }
-// not work on object 
-// for (const [key, value] of myObject) {
-//     console.log(key,' :- ', value);
-// }
+for (const [key, value] of myObject) {
+    console.log(key ' :- ', value);
+}

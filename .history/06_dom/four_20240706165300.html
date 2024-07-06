@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JS PRACTICE</title>
+</head>
+<body style="background-color: #121212; color: #fff;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage (langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').
+        appendChild(li)
+       
+    }
+    addLanguage("JAVA")
+    addLanguage("PHP")
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        // const add = document.createTextNode(langName)
+        // li.appendChild(add)
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addOptiLanguage("PYTHON")
+    addOptiLanguage("C++")
+
+    function addtext(lanName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lanName))
+        document.querySelector('.language')
+        appendChild(li)
+    }
+    addtext("vishwa")
+
+
+
+</script>
+</html>
