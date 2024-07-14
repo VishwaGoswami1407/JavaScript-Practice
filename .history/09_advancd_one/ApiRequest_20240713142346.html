@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+
+<table border="2" width="100px" height="100px">
+    <tr width="70px" height="60px">
+        <td id="photo"></td>
+        <td id="followers"></td>
+    </tr>
+</table>
+</body>
+<script>
+    let requestUrl = 'https://api.github.com/users/VishwaGoswami1407'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data);
+            console.log(data.followers);
+
+
+            // document.getElementById('photo').innerHTML = '<img src="' + data.avatar_url + '">';
+            // document.getElementById('followers').innerHTML = data.followers;
+        }
+    }
+    xhr.send();
+    document.getElementById('photo').addEventListener('click', function(){
+        // if (data) {
+        //     console.log(data.avatar_url);
+        // }
+        console.log(data.avatar_url);
+    });
+    document.getElementById('followers').addEventListener('click', function(){
+        if (data) {
+            console.log(data.followers);
+        }
+    });
+    
+    
+</script>
+</html>
