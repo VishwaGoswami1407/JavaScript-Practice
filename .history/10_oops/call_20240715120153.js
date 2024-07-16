@@ -1,0 +1,26 @@
+// call and bind keyword
+// window = {this = window}
+// node = {} empty 
+
+
+// function(){
+//     callme()
+// }
+
+
+function setUsername(username){
+    //complez DB calls
+    this.username = username
+    console.log("colled");
+}
+
+function createUser(username, email, password)
+{
+    setUsername(username)
+
+    this.email = email
+    this.password = password
+}
+ 
+const chai = new createUser("vishwa", "vishwa@gmail.com", "123")
+console.log(chai);

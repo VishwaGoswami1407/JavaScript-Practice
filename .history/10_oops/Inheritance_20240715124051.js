@@ -8,26 +8,7 @@ class user{
     }
 }
 
-class Teacher extends user{
-    constructor(username, email, password){
-        super(username)
-        this.email = email
-        this.password = password
-    }
 
-    addCourse(){
-        console.log(`a new course was added by ${this.username}`);
-    }
-}
-
-const chai = new Teacher("chai", "chai@.com", "123")
-chai.addCourse()
-const masalaChai = new user("masalaChai")
-masalaChai.logMe()
-console.log(chai instanceof Teacher);
-console.log(chai instanceof user);
-console.log(chai === Teacher);
-console.log(chai === masalaChai);
 
 
 
