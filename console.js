@@ -1,7 +1,7 @@
 console.log("hello world!")
 
-function sum(sum){
-  console.log(`${sum} + ${sum} = `)
+function sum(num){
+  console.log(`${num} + ${num} = `)
 }
 sum(10);
 
