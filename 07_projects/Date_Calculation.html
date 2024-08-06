@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Calculation</title>
+    <style>
+        button {
+            margin: 5px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body style="background-color: black; color: white;">
+    <button onclick="showCurrentDate()">Current Date</button>
+    <button onclick="setStartDate()">Start Date</button>
+    <button onclick="setEndDate()">End Date</button>
+    
+    <div id="output"></div>
+    
+    <script>
+        let startDate = null;
+        let endDate = null;
+
+        function showCurrentDate() {
+            const currentDate = new Date();
+            document.getElementById('output').innerHTML = `Current Date: ${currentDate.toDateString()}`;
+        }
+
+        function setStartDate() {
+            startDate = prompt("Enter Start Date (YYYY-MM-DD):");
+            document.getElementById('output').innerHTML = `Start Date: ${new Date(startDate).toDateString()}`;
+        }
+
+        function setEndDate() {
+            endDate = prompt("Enter End Date (YYYY-MM-DD):");
+            document.getElementById('output').innerHTML += `<br>End Date: ${new Date(endDate).toDateString()}`;
+            calculateDaysAndMonths();
+            countWeekdays();
+        }
+
+        function calculateDaysAndMonths() {
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                const timeDifference = end - start;
+                const daysDifference = timeDifference / (1000 * 3600 * 24);
+                const monthsDifference = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+
+                document.getElementById('output').innerHTML += `<br>Total Days: ${daysDifference}`;
+                document.getElementById('output').innerHTML += `<br>Total Months: ${monthsDifference}`;
+            } else {
+                alert("Please set both Start Date and End Date.");
+            }
+        }
+
+        function countWeekdays() {
+            if (startDate && endDate) {
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                const dayCounts = Array(7).fill(0);
+                const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+                for (let d = start; d <= end; d.setDate(d.getDate() + 1)) {
+                    dayCounts[d.getDay()]++;
+                }
+
+                let output = '<br>Weekday Counts:';
+                for (let i = 0; i < 7; i++) {
+                    output += `<br>${dayNames[i]}: ${dayCounts[i]}`;
+                }
+
+                document.getElementById('output').innerHTML += output;
+            }
+        }
+    </script>
+</body>
+</html>
